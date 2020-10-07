@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>DappHero HTML Generation</title>
+
+    <meta charset="UTF-8" />
+    <meta name="author" content="DappHero" />
+    <meta name="description" content="DappHero" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/index.html">The Game</a></li>
+          <li><a href="">Buy Tokens</a></li>
+          <li><a href="/info.html">Info</a></li>
+        </ul>
+      </nav>
+      <h1><img
+        alt="Logo"
+        src="//s3.amazonaws.com/appforest_uf/f1598655109057x434612622631313600/Chance_logo_01.png"
+        height="70"
+      />Chance Random<img
+        alt="Logo"
+        src="//s3.amazonaws.com/appforest_uf/f1598655109057x434612622631313600/Chance_logo_01.png"
+        height="70"
+      /></h1>
+      <h2>Chance - The Game</h2>
+      <h3 style="color:red">KOVAN TESTNET</h3>
+      <h4>Chance Random is a decentralised monetry game</h4>
+      <h2 style="color:red">THIS IS AN EXPERIMENT PLAY AT YOUR WON RISK</h2>
+
+      <br />
+      <p>
+        <button data-dh-feature="network" data-dh-property-enable="true">
+          Enable Web3
+        </button>
+        <h5>Daily 10% of all CHRND tokens will be burnt and One lucky CHRND holder will win 90% of these tokens</h5>
+        <h5>The user who triggers the game will be awarded 9% of winnings, Devs take 1% for work on the Chance Serise</h5>
+      </p>
+      <header>
+        <div
+          data-dh-feature="customContract"
+          data-dh-property-method-id="3PFd"
+          data-dh-property-auto-invoke="true"
+          data-dh-property-contract-name="Chacne_Game_a0.9"
+          data-dh-property-method-name="playgame"
+        >
+          <h3>Play the Game</h3>
+          <h4> The game can be played once a day </h4>
+          <section>
+            <aside>
+              <button
+                data-dh-property-invoke="true"
+                data-dh-property-method-id="3PFd"
+              >
+                playgame
+              </button>
+            </aside>
+          </section>
+        </div>
+      </header>
+    </section>
+  </header>
+  <header>
+    <div
+      data-dh-feature="customContract"
+      data-dh-property-method-id="lh-1"
+      data-dh-property-auto-invoke="true"
+      data-dh-property-contract-name="Chacne_Game_a0.9"
+      data-dh-property-method-name="countDown"
+    >
+      <h3>Next Game In...</h3>
+      <section>
+        <aside>
+          <div
+            data-dh-property-method-id="lh-1"
+            data-dh-property-outputs="true"
+          >
+            <pre>Output...</pre>
+          </div>
+          <h3>Seconds</h3>
+        </aside>
+      </section>
+    </div>
+  </header>
+    </header>
+    <div>
+          <header>
+            <div
+              data-dh-feature="customContract"
+              data-dh-property-method-id="kBXy"
+              data-dh-property-auto-invoke="true"
+              data-dh-property-contract-name="Chacne_Game_a0.9"
+              data-dh-property-method-name="_token"
+            >
+            </div>
+          </header>
+          ,
+          <header>
+            <div
+            data-dh-feature="customContract"
+            data-dh-property-method-id="EYtj"
+            data-dh-property-auto-invoke="true"
+            data-dh-property-contract-name="Chacne_Game_a0.9"
+            data-dh-property-method-name="lastPlayer"
+            >
+              <h3>Last Player</h3>
+              <section>
+                <aside>
+                  <div
+                    data-dh-property-method-id="EYtj"
+                    data-dh-property-outputs="true"
+                  >
+                    <pre>Output...</pre>
+                  </div>
+                
+                </aside>
+              </section>
+            </div>
+          </header>
+          ,
+          <header>
+            <div
+              data-dh-feature="customContract"
+              data-dh-property-method-id="xUyV"
+              data-dh-property-auto-invoke="true"
+              data-dh-property-contract-name="Chacne_Game_a0.9"
+              data-dh-property-method-name="lastWinner"
+            >
+              <h3>Last Winner</h3>
+              <section>
+                <aside>
+                  <div
+                    data-dh-property-method-id="xUyV"
+                    data-dh-property-outputs="true"
+                  >
+                    <pre>Output...</pre>
+                  </div>
+                </aside>
+              </section>
+            </div>
+          </header>
+    </div>
+    <script
+      id="dh-apiKey"
+      data-api="1598655071797x508769074557747200"
+      src="https://package.dapphero.io/main.js"
+    ></script>
+    <style>
+      form {
+        margin: 40px;
+      }
+    </style>
+
+    <script>
+      document.addEventListener(
+        "dappHeroConfigLoaded",
+        ({ detail: dappHero }) => {
+          // Inside here you can listen to any event you want
+          console.log("DappHero Has Loaded!");
+
+          // For projects with auto-invoked method, you will want to filter on events
+          // dappHero.listenToTransactionStatusChange(data => {
+          //   console.log("Listening to transtaction status change", data);
+          // });
+
+          // This is how you can listen to any events your smart contract emits
+          dappHero.listenToSmartContractBlockchainEvent((data) => {
+            console.log("The blockChain Events: ", data);
+          });
+
+          //This is an example method for alerting your users they are on the wrong network
+          //if(window.dappHero.provider.chainId !== 42){
+          //  alert("Wrong network! You should be on 42")
+          //}
+        }
+      );
+    </script>
+  </body>
+</html>

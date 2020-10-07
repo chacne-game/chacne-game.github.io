@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>DappHero HTML Generation</title>
+
+    <meta charset="UTF-8" />
+    <meta name="author" content="DappHero" />
+    <meta name="description" content="DappHero" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/index.html">The Game</a></li>
+          <li><a href="/sale.html">Buy Tokens</a></li>
+          <li><a href="/info.html">Info</a></li>
+        </ul>
+      </nav>
+      <h1>
+        <img
+          alt="Logo"
+          src="//s3.amazonaws.com/appforest_uf/f1598655109057x434612622631313600/Chance_logo_01.png"
+          height="70"
+        />Chance Random<img
+          alt="Logo"
+          src="//s3.amazonaws.com/appforest_uf/f1598655109057x434612622631313600/Chance_logo_01.png"
+          height="70"
+        />
+      </h1>
+    </header>
+
+    <header>
+      <ph
+        >This is a game of chance. Holding coins will automaticly enter you into
+        each game that is played.</ph
+      >
+      <ph>
+        <p>
+          Onces a day, at a random time a player will beable to trigger the game
+          of Chance.
+        </p>
+      </ph>
+      <ph
+        >Each game takes 10% of the total circulating CHRAN supply (10% of each
+        user*) and rewards a lucky holder.</ph
+      >
+
+      <ph></ph>
+    </header>
+    <script
+      id="dh-apiKey"
+      data-api="1598655071797x508769074557747200"
+      src="https://package.dapphero.io/main.js"
+    ></script>
+    <style>
+      form {
+        margin: 40px;
+      }
+    </style>
+    <script>
+      document.addEventListener(
+        "dappHeroConfigLoaded",
+        ({ detail: dappHero }) => {
+          // Inside here you can listen to any event you want
+          console.log("DappHero Has Loaded!");
+
+          // For projects with auto-invoked method, you will want to filter on events
+          // dappHero.listenToTransactionStatusChange(data => {
+          //   console.log("Listening to transtaction status change", data);
+          // });
+
+          // This is how you can listen to any events your smart contract emits
+          dappHero.listenToSmartContractBlockchainEvent((data) => {
+            console.log("The blockChain Events: ", data);
+          });
+
+          //This is an example method for alerting your users they are on the wrong network
+          //if(window.dappHero.provider.chainId !== 42){
+          //  alert("Wrong network! You should be on 42")
+          //}
+        }
+      );
+    </script>
+  </body>
+</html>

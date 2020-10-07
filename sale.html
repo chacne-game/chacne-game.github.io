@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>DappHero HTML Generation</title>
+
+    <meta charset="UTF-8" />
+    <meta name="author" content="DappHero" />
+    <meta name="description" content="DappHero" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Play The Game</a></li>
+          <li><a href="/sale.html">Buy Tokens</a></li>
+          <li><a href="/info.html">Info</a></li>
+        </ul>
+      </nav>
+      <h1><img
+        alt="Logo"
+        src="//s3.amazonaws.com/appforest_uf/f1598655109057x434612622631313600/Chance_logo_01.png"
+        height="70"
+      />Chance Random<img
+        alt="Logo"
+        src="//s3.amazonaws.com/appforest_uf/f1598655109057x434612622631313600/Chance_logo_01.png"
+        height="70"
+      /></h1>
+      <h2>Chance - Token Sale</h2>
+      <br />
+      <p>
+        <button data-dh-feature="network" data-dh-property-enable="true">
+          Enable Web3
+        </button>
+      </p>
+    </header>
+  <div>
+		<header>
+      <section>
+		  	<h2>Chance Random - Token Sale</h2>
+		</section>
+		<section>
+       		<h3>The token of chance, CHRND, is avalabule to buy with Ethereum.  Each CHRND can be exchanged for 0.01ETH</h3>
+		</section>
+		</header>
+    <header>
+            <div
+              data-dh-feature="customContract"
+              data-dh-property-method-id="ZIs2"
+              data-dh-property-auto-invoke="false"
+              data-dh-property-contract-name="Chacne_Sale_a0.9"
+              data-dh-property-method-name="buyTokens"
+            >
+              <h3>Enter the Game&nbsp;</h3>
+              <section>
+                <aside>
+                  <section>
+                    <i>ETh to Invest</i>
+					<input
+                      type="text"
+                      placeholder="EthValue"
+                      data-dh-property-method-id="ZIs2"
+                      data-dh-property-input-name="EthValue"
+                    />
+                  </section>
+
+                  <button
+                    data-dh-property-invoke="true"
+                    data-dh-property-method-id="ZIs2"
+                  >
+                    buyTokens
+                  </button>
+					<header>
+            <div
+              data-dh-feature="customContract"
+              data-dh-property-method-id="Fq_s"
+              data-dh-property-auto-invoke="true"
+              data-dh-property-contract-name="Chacne_Sale_a0.9"
+              data-dh-property-method-name="soldTokens"
+            >
+              <h3>Tokens Sold</h3>
+              <section>
+                
+                  <div
+                    data-dh-property-method-id="Fq_s"
+                    data-dh-property-outputs="true"
+                  >
+                    <pre>Output...</pre>
+                  </div>
+                    <h4>/ 1,400,000 CHRND</h4>
+                  
+                
+              </section>
+            </div>
+          </header>
+                </aside>
+				  
+              </section>
+            </div>
+</header>
+	  <header>
+		<h2>So, whats happening with the crowdsale?</h2>
+		<ph>Out of the total 2,000,000CHRND avalabule, there is 70% avalabule in this sale.</ph>
+		<ph><br>
+	    </ph>
+		<ph>The other 30% will be distubuted though airdrop campains (5%) and Uniswap Liquidety Pool (20%) and other incentives (5%)</ph>
+		<ph><br>
+	    </ph>
+		<ph><br>
+	    </ph>
+		<h3>What about the sale funds?&nbsp;</h3>
+		<p>We will be using 28.5% of the funds to launch a ETH&lt;&gt;CHRND Uniswap pool.&nbsp; Creating the abilety for users to traid their winnings or buy in.</p>
+		<p>61.5% of the funds will be used to build Lotto.&nbsp; Lotto is our vision for a decentralised Lottery system.&nbsp; Investors from this crowdsale will also beable to redeam  the new LOTTO govanance token on launch.&nbsp; &nbsp; &nbsp; &nbsp;</p>
+		<p>The remaining 10% is allocated to the admin &amp; dev team.&nbsp;</p>
+<p>&nbsp;</p>
+      </header>
+     </section>
+    </header>
+    </div>
+    <script
+      id="dh-apiKey"
+      data-api="1598655071797x508769074557747200"
+      src="https://package.dapphero.io/main.js"
+    ></script>
+    <style>
+      form {
+        margin: 40px;
+      }
+    </style>
+
+    <script>
+      document.addEventListener(
+        "dappHeroConfigLoaded",
+        ({ detail: dappHero }) => {
+          // Inside here you can listen to any event you want
+          console.log("DappHero Has Loaded!");
+
+          // For projects with auto-invoked method, you will want to filter on events
+          // dappHero.listenToTransactionStatusChange(data => {
+          //   console.log("Listening to transtaction status change", data);
+          // });
+
+          // This is how you can listen to any events your smart contract emits
+          dappHero.listenToSmartContractBlockchainEvent((data) => {
+            console.log("The blockChain Events: ", data);
+          });
+
+          //This is an example method for alerting your users they are on the wrong network
+          //if(window.dappHero.provider.chainId !== 42){
+          //  alert("Wrong network! You should be on 42")
+          //}
+        }
+      );
+    </script>
+  </body>
+</html>
